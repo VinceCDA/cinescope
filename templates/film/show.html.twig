@@ -24,6 +24,13 @@
 				<th>DateSortie</th>
 				<td>{{ film.dateSortie }}</td>
 			</tr>
+			<tr>
+				<th>Plateforme</th>
+				{% for item in film.plateformes %}
+					<td>{{ item.name }}</td>
+				{% endfor %}
+			</tr>
+
 		</tbody>
 	</table>
 
