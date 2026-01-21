@@ -29,16 +29,14 @@ final class TestEntityFactory
         $entityManagerInterface->flush();
         return $user;
     }
-    public static function createPlateforme(EntityManagerInterface $entityManagerInterface, ?string $nom = null, ?string $slug = null):Plateforme{
+    public static function createPlateforme(EntityManagerInterface $entityManagerInterface, ?string $nom = null, ?string $slug = null): Plateforme
+    {
         $plateforme = new Plateforme();
-        $plateforme->setName($nom ?? ('Name '.uniqid()));
-        $plateforme->setLogo($slug ?? ('logo'.uniqid()));
-        $plateforme->setUrl($slug ?? ('url_'.uniqid()));
-        if (method_exists($categorie,'setCreatedAt')) {
-            $categorie->setCreatedAt(new DateTimeImmutable());
-        }
-        $entityManagerInterface->persist($categorie);
+        $plateforme->setName($nom ?? ('Name ' . uniqid()));
+        $plateforme->setLogo($slug ?? ('logo' . uniqid()));
+        $plateforme->setUrl($slug ?? ('url_' . uniqid()));
+        $entityManagerInterface->persist($plateforme);
         $entityManagerInterface->flush();
-        return $categorie;
+        return $plateforme;
     }
 }
