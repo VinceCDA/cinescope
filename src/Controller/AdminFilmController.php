@@ -71,7 +71,7 @@ final class AdminFilmController extends AbstractController
     #[Route('/{id}', name: 'app_admin_film_delete', methods: ['POST'])]
     public function delete(Request $request, Film $film, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$film->getId(), $request->getPayload()->getString('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $film->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($film);
             $entityManager->flush();
         }
