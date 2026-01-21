@@ -27,7 +27,7 @@ jobs:
                       cd "${{ secrets.VPS_PATH_CINESCOPE }}"
 
                       git fetch --all
-                      git reset --hard origin/main
+                      git reset --hard origin/master
 
                       composer install --no-interaction --prefer-dist --no-dev --optimize-autoloader
 
